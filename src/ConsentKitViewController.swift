@@ -1,6 +1,6 @@
 //
 //  ConsentKitViewController.swift
-//  ConsentIos
+//  Gdpr
 //
 //  Created by Cristian Baluta on 21/05/2018.
 //  Copyright © 2018 Cristian Baluta. All rights reserved.
@@ -12,28 +12,35 @@ class ConsentKitViewController: UITableViewController {
 
     var didAccept: ((ConsentKitItem) -> Void)?
     var didReject: ((ConsentKitItem) -> Void)?
-    var items: [ConsentKitItem] = [] {
+    var didFinishReview: (() -> Void)?
+    var items: [(ConsentKitItem, Bool)] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-    var defaultValues: [Bool] = []
     fileprivate let gdpr = ConsentKit()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let header = CloudKitViewControllerHeader(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80))
-        header.didDone = {
-            // Set to false the untouched switches to prevent gdpr being called again
-            for item in self.items {
-                if !self.gdpr.isReviewed(item) {
-                    self.gdpr.set(false, for: item)
-                }
-            }
-            self.dismiss(animated: true, completion: nil)
-        }
-        tableView.tableHeaderView = header
+        
         tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if self.navigationController == nil {
+            // Add a custom header only if the VC is not pushed into a navigationController
+            let header = CloudKitViewControllerHeader(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80))
+            header.didDone = {
+                self.handleDone()
+                self.dismiss(animated: true, completion: nil)
+            }
+            tableView.tableHeaderView = header
+        } else {
+            self.title = "Review services!"
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(handleDone))
+        }
     }
 
     // MARK: - Table view data source
@@ -50,13 +57,13 @@ class ConsentKitViewController: UITableViewController {
 
         let item = items[indexPath.row]
         let cell = ConsentKitCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = item.title()
-        cell.detailTextLabel?.text = item.description()
+        cell.textLabel?.text = item.0.title()
+        cell.detailTextLabel?.text = item.0.description()
         cell.detailTextLabel?.numberOfLines = 0
         cell.valueChanged = { switchButton in
-            self.switchChanged(switchButton, with: item)
+            self.switchChanged(switchButton, with: item.0)
         }
-        cell.defaultValue = defaultValues[indexPath.row]
+        cell.defaultValue = item.1
         
         return cell
     }
@@ -70,17 +77,17 @@ class ConsentKitViewController: UITableViewController {
     func switchChanged(_ switchButton: UISwitch, with item: ConsentKitItem) {
 
         if switchButton.isOn {
-            let alert = UIAlertController(title: "Consent", message: item.alertDescription(), preferredStyle: .alert)
+            let alert = UIAlertController(title: item.title(), message: item.alertMessage(), preferredStyle: .alert)
             alert.addAction(
                 UIAlertAction(title: "Accept", style: .default, handler: { _ in
-                    self.gdpr.set(true, for: item)
+                    self.gdpr.setAccepted(true, for: item)
                     self.didAccept?(item)
                 })
             )
             alert.addAction(
                 UIAlertAction(title: "Decline", style: .cancel, handler: { _ in
                     switchButton.isOn = false
-                    self.gdpr.set(false, for: item)
+                    self.gdpr.setAccepted(false, for: item)
                     self.didReject?(item)
                 })
             )
@@ -88,5 +95,15 @@ class ConsentKitViewController: UITableViewController {
         } else {
             self.didReject?(item)
         }
+    }
+    
+    @objc func handleDone() {
+        // Set to false the untouched switches, to prevent gdpr being called again
+        for item in self.items {
+            if !self.gdpr.isReviewed(item.0) {
+                self.gdpr.setAccepted(false, for: item.0)
+            }
+        }
+        self.didFinishReview?()
     }
 }

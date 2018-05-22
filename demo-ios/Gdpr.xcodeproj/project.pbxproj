@@ -16,6 +16,8 @@
 		2845159420B352F4009F3EE1 /* ConsentKitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159020B352F4009F3EE1 /* ConsentKitCell.swift */; };
 		2845159520B352F4009F3EE1 /* ConsentKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159120B352F4009F3EE1 /* ConsentKit.swift */; };
 		2845159620B352F4009F3EE1 /* ConsentKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159220B352F4009F3EE1 /* ConsentKitViewController.swift */; };
+		2845159820B4BB95009F3EE1 /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159720B4BB95009F3EE1 /* SimpleViewController.swift */; };
+		2845159A20B4BDBC009F3EE1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159920B4BDBC009F3EE1 /* NavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		2845159020B352F4009F3EE1 /* ConsentKitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentKitCell.swift; sourceTree = "<group>"; };
 		2845159120B352F4009F3EE1 /* ConsentKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentKit.swift; sourceTree = "<group>"; };
 		2845159220B352F4009F3EE1 /* ConsentKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentKitViewController.swift; sourceTree = "<group>"; };
+		2845159720B4BB95009F3EE1 /* SimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
+		2845159920B4BDBC009F3EE1 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 			children = (
 				2845157C20B3528B009F3EE1 /* AppDelegate.swift */,
 				2845157E20B3528B009F3EE1 /* ViewController.swift */,
+				2845159720B4BB95009F3EE1 /* SimpleViewController.swift */,
+				2845159920B4BDBC009F3EE1 /* NavigationViewController.swift */,
 				2845158020B3528B009F3EE1 /* Main.storyboard */,
 				2845158320B3528F009F3EE1 /* Assets.xcassets */,
 				2845158520B3528F009F3EE1 /* LaunchScreen.storyboard */,
@@ -76,10 +82,10 @@
 		2845158E20B352F4009F3EE1 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				2845158F20B352F4009F3EE1 /* CloudKitViewControllerHeader.swift */,
-				2845159020B352F4009F3EE1 /* ConsentKitCell.swift */,
 				2845159120B352F4009F3EE1 /* ConsentKit.swift */,
 				2845159220B352F4009F3EE1 /* ConsentKitViewController.swift */,
+				2845159020B352F4009F3EE1 /* ConsentKitCell.swift */,
+				2845158F20B352F4009F3EE1 /* CloudKitViewControllerHeader.swift */,
 			);
 			name = src;
 			path = ../../src;
@@ -156,11 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2845159A20B4BDBC009F3EE1 /* NavigationViewController.swift in Sources */,
 				2845157F20B3528B009F3EE1 /* ViewController.swift in Sources */,
 				2845159420B352F4009F3EE1 /* ConsentKitCell.swift in Sources */,
 				2845159620B352F4009F3EE1 /* ConsentKitViewController.swift in Sources */,
 				2845157D20B3528B009F3EE1 /* AppDelegate.swift in Sources */,
 				2845159320B352F4009F3EE1 /* CloudKitViewControllerHeader.swift in Sources */,
+				2845159820B4BB95009F3EE1 /* SimpleViewController.swift in Sources */,
 				2845159520B352F4009F3EE1 /* ConsentKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

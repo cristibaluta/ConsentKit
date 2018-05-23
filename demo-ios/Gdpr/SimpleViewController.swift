@@ -18,7 +18,7 @@ class SimpleViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if gdpr.needsReviewing([Services.icloud, Services.analytics]) {
+        if gdpr.needsReviewing([Services.icloud, Services.analytics, ConsentKitServices.location]) {
             label.text = "Gdpr needs reviewing!"
         } else {
             label.text = "All gdpr items already reviewed"
@@ -30,7 +30,8 @@ class SimpleViewController: UIViewController {
         let vc = ConsentKitViewController()
         vc.items = [
             (Services.icloud, gdpr.isAccepted(Services.icloud)),
-            (Services.analytics, gdpr.isAccepted(Services.analytics))
+            (Services.analytics, gdpr.isAccepted(Services.analytics)),
+            (ConsentKitServices.location, gdpr.isAccepted(ConsentKitServices.location))
         ]
         self.present(vc, animated: true)
     }

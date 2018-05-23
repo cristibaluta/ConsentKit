@@ -65,3 +65,7 @@ protocol ConsentKitDataSource {
     func reset (_ item: ConsentKitItem)
 }
 ```
+
+## Contribution
+Help me create a generic list of services  that people can use without wasting time thinking and writing them. I started this file, ConsentKitServices, for this purpose, so if you know new services or better texts please go ahead and make pull requests or create issues so we can discuss them.
+Thanks.

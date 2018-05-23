@@ -11,6 +11,7 @@ import UIKit
 class SimpleViewController: UIViewController {
     
     fileprivate let gdpr = ConsentKit()
+//    fileprivate let gdpr = ConsentKit(dataSource: InMemoryDataSource())
     
     @IBOutlet var label: UILabel!
     
@@ -26,11 +27,11 @@ class SimpleViewController: UIViewController {
     
     @IBAction func handleGdpr() {
         
-        let gdprView = ConsentKitViewController()
-        gdprView.items = [
+        let vc = ConsentKitViewController()
+        vc.items = [
             (Services.icloud, gdpr.isAccepted(Services.icloud)),
             (Services.analytics, gdpr.isAccepted(Services.analytics))
         ]
-        self.present(gdprView, animated: true)
+        self.present(vc, animated: true)
     }
 }

@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-458" y="257"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--My App-->
         <scene sceneID="x2z-WN-oMX">
             <objects>
                 <viewController id="AAu-ag-sAO" customClass="NavigationViewController" customModule="Gdpr" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1lc-T6-JBk"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qGR-cq-uTG"/>
+                    <navigationItem key="navigationItem" title="My App" id="qGR-cq-uTG"/>
                     <connections>
                         <outlet property="label" destination="8R6-qB-LUu" id="dW7-fx-Oz0"/>
                     </connections>

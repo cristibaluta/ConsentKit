@@ -18,6 +18,8 @@
 		2845159620B352F4009F3EE1 /* ConsentKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159220B352F4009F3EE1 /* ConsentKitViewController.swift */; };
 		2845159820B4BB95009F3EE1 /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159720B4BB95009F3EE1 /* SimpleViewController.swift */; };
 		2845159A20B4BDBC009F3EE1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159920B4BDBC009F3EE1 /* NavigationViewController.swift */; };
+		2845159C20B5EA1C009F3EE1 /* InMemoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159B20B5EA1C009F3EE1 /* InMemoryDataSource.swift */; };
+		2845159E20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159D20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		2845159220B352F4009F3EE1 /* ConsentKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentKitViewController.swift; sourceTree = "<group>"; };
 		2845159720B4BB95009F3EE1 /* SimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
 		2845159920B4BDBC009F3EE1 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		2845159B20B5EA1C009F3EE1 /* InMemoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDataSource.swift; sourceTree = "<group>"; };
+		2845159D20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentKitUserDefaultsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 				2845157E20B3528B009F3EE1 /* ViewController.swift */,
 				2845159720B4BB95009F3EE1 /* SimpleViewController.swift */,
 				2845159920B4BDBC009F3EE1 /* NavigationViewController.swift */,
+				2845159B20B5EA1C009F3EE1 /* InMemoryDataSource.swift */,
 				2845158020B3528B009F3EE1 /* Main.storyboard */,
 				2845158320B3528F009F3EE1 /* Assets.xcassets */,
 				2845158520B3528F009F3EE1 /* LaunchScreen.storyboard */,
@@ -83,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				2845159120B352F4009F3EE1 /* ConsentKit.swift */,
+				2845159D20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift */,
 				2845159220B352F4009F3EE1 /* ConsentKitViewController.swift */,
 				2845159020B352F4009F3EE1 /* ConsentKitCell.swift */,
 				2845158F20B352F4009F3EE1 /* CloudKitViewControllerHeader.swift */,
@@ -163,7 +169,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2845159A20B4BDBC009F3EE1 /* NavigationViewController.swift in Sources */,
+				2845159E20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift in Sources */,
 				2845157F20B3528B009F3EE1 /* ViewController.swift in Sources */,
+				2845159C20B5EA1C009F3EE1 /* InMemoryDataSource.swift in Sources */,
 				2845159420B352F4009F3EE1 /* ConsentKitCell.swift in Sources */,
 				2845159620B352F4009F3EE1 /* ConsentKitViewController.swift in Sources */,
 				2845157D20B3528B009F3EE1 /* AppDelegate.swift in Sources */,

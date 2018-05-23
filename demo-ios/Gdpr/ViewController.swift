@@ -14,7 +14,8 @@ class ViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        gdpr.resetAll() // For testing purposes we reset all values from previous run
+        // For testing purposes we reset all values from previous run
+        gdpr.reset(Services.icloud)
+        gdpr.reset(Services.analytics)
     }
 }

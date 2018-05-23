@@ -26,14 +26,14 @@ class NavigationViewController: UIViewController {
     
     @IBAction func handleGdpr() {
         
-        let gdprView = ConsentKitViewController()
-        gdprView.items = [
+        let vc = ConsentKitViewController()
+        vc.items = [
             (Services.icloud, gdpr.isAccepted(Services.icloud)),
             (Services.analytics, gdpr.isAccepted(Services.analytics))
         ]
-        gdprView.didFinishReview = {
+        vc.didFinishReview = {
             self.navigationController?.popViewController(animated: true)
         }
-        self.navigationController?.pushViewController(gdprView, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

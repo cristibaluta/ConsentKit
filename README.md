@@ -4,7 +4,8 @@ Note: This library only helps you collect consents for the services in your app 
 ![Screenshot](https://image.ibb.co/b9C4rT/Screen_Shot_2018_05_23_at_00_41_15.png)
 
 ## Usage
-### Define the services needing the user consent
+### Define the services in your app needing the user consent
+Note: Some generic services can be found in ConsentKitServices
 
 ```swift
 enum Services: String, ConsentKitItem {
@@ -45,24 +46,27 @@ If yes, add the default ConsentKitViewController to handle all the switches for 
 ```swift
 if gdpr.needsReviewing([Services.icloud, Services.analytics]) {
 
-    let gdprView = ConsentKitViewController()
-    gdprView.items = [
+    let vc = ConsentKitViewController()
+    vc.items = [
         (Services.icloud, gdpr.isAccepted(Services.icloud)),
-        (Services.analytics, gdpr.isAccepted(Services.analytics))
+        (Services.analytics, gdpr.isAccepted(Services.analytics)),
+        (ConsentKitServices.location, gdpr.isAccepted(ConsentKitServices.location))
     ]
-    self.present(gdprView, animated: true)
+    self.present(vc, animated: true)
 }
 ```
 
 ### Custom storage
-By default ConsentKit keeps values in UserDefaults, but you can change that with the gdpr.dataSource property. Just assign a class implementing the ConsentKitDataSource
+By default ConsentKit keeps values in UserDefaults, but you can change that with the gdpr.dataSource property. Just assign or pass through constructor a class implementing the ConsentKitDataSource
 
 ```swift
+let gdpr = ConsentKit(dataSource: InMemoryDataSource())// InMemoryDataSource implements ConsentKitDataSource
+
 protocol ConsentKitDataSource {
     func isAccepted (_ item: ConsentKitItem) -> Bool
     func isReviewed (_ item: ConsentKitItem) -> Bool
     func setAccepted (_ value: Bool, for item: ConsentKitItem)
-    func reset (_ item: ConsentKitItem)
+    func reset (_ item: ConsentKitItem)// Optional
 }
 ```
 

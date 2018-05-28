@@ -1,6 +1,5 @@
 //
 //  ConsentKitViewController.swift
-//  Gdpr
 //
 //  Created by Cristian Baluta on 21/05/2018.
 //  Copyright © 2018 Cristian Baluta. All rights reserved.
@@ -56,16 +55,15 @@ class ConsentKitViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let item = items[indexPath.row]
-        let cell = ConsentKitCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = item.title()
-        cell.detailTextLabel?.text = item.description()
-        cell.detailTextLabel?.numberOfLines = 0
-        cell.valueChanged = { switchButton in
-            self.switchChanged(switchButton, with: item)
+        var cell: ConsentKitCellProtocol = ConsentKitCell.instantiateFromXib()
+        cell.title = item.title()
+        cell.subtitle = item.description()
+        cell.value = gdpr.isAccepted(item)
+        cell.valueDidChange = { isOn in
+            self.item(item, didChangeValue: isOn, in: cell)
         }
-        cell.defaultValue = gdpr.isAccepted(item)
         
-        return cell
+        return cell as! ConsentKitCell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -74,9 +72,9 @@ class ConsentKitViewController: UITableViewController {
 
     // MARK: - Switch changed
 
-    func switchChanged(_ switchButton: UISwitch, with item: ConsentKitItem) {
+    func item(_ item: ConsentKitItem, didChangeValue value: Bool, in cell: ConsentKitCellProtocol) {
 
-        if switchButton.isOn {
+        if value {
             let alert = UIAlertController(title: item.title(), message: item.alertMessage(), preferredStyle: .alert)
             alert.addAction(
                 UIAlertAction(title: "Accept", style: .default, handler: { _ in
@@ -86,7 +84,8 @@ class ConsentKitViewController: UITableViewController {
             )
             alert.addAction(
                 UIAlertAction(title: "Decline", style: .cancel, handler: { _ in
-                    switchButton.isOn = false
+                    var cell = cell
+                    cell.value = false
                     self.gdpr.setAccepted(false, for: item)
                     self.didReject?(item)
                 })

@@ -1,10 +1,10 @@
 # ConsentKit
 Note: This library only helps you collect consents for the services in your app that needs it, actually disabling those services is developer's job.
 
-![Screenshot](https://image.ibb.co/b9C4rT/Screen_Shot_2018_05_23_at_00_41_15.png)
+![Screenshot](https://image.ibb.co/iuASQy/Screen_Shot_2018_05_28_at_23_07_10.png)
 
 ## Usage
-### Define the services in your app needing the user consent
+### Define the services in your app
 Note: Some generic services can be found in ConsentKitServices
 
 ```swift
@@ -41,17 +41,13 @@ let gdpr = ConsentKit()
 ```
 
 ### Check if you have missing consents
-If yes, add the default ConsentKitViewController to handle all the switches for you. One item is a touple of (ConsentKitItem, Bool)
+If yes, add the default ConsentKitViewController to handle all the switches for you.
 
 ```swift
 if gdpr.needsReviewing([Services.icloud, Services.analytics]) {
 
     let vc = ConsentKitViewController()
-    vc.items = [
-        (Services.icloud, gdpr.isAccepted(Services.icloud)),
-        (Services.analytics, gdpr.isAccepted(Services.analytics)),
-        (ConsentKitServices.location, gdpr.isAccepted(ConsentKitServices.location))
-    ]
+    vc.items = [Services.icloud, Services.analytics, ConsentKitServices.location]
     self.present(vc, animated: true)
 }
 ```

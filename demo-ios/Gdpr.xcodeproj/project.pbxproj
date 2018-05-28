@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		283DB05C20BADECD00A8BC14 /* ConsentKitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 283DB05B20BADECD00A8BC14 /* ConsentKitCell.xib */; };
+		283DB05E20BC77D200A8BC14 /* ConsentKitCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283DB05D20BC77D200A8BC14 /* ConsentKitCellProtocol.swift */; };
 		2845157D20B3528B009F3EE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845157C20B3528B009F3EE1 /* AppDelegate.swift */; };
 		2845157F20B3528B009F3EE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845157E20B3528B009F3EE1 /* ViewController.swift */; };
 		2845158220B3528B009F3EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2845158020B3528B009F3EE1 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		283DB05B20BADECD00A8BC14 /* ConsentKitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConsentKitCell.xib; sourceTree = "<group>"; };
+		283DB05D20BC77D200A8BC14 /* ConsentKitCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentKitCellProtocol.swift; sourceTree = "<group>"; };
 		2845157920B3528B009F3EE1 /* Gdpr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gdpr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2845157C20B3528B009F3EE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2845157E20B3528B009F3EE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				2845159F20B5F738009F3EE1 /* ConsentKitServices.swift */,
 				2845159D20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift */,
 				2845159220B352F4009F3EE1 /* ConsentKitViewController.swift */,
+				283DB05D20BC77D200A8BC14 /* ConsentKitCellProtocol.swift */,
 				2845159020B352F4009F3EE1 /* ConsentKitCell.swift */,
 				283DB05B20BADECD00A8BC14 /* ConsentKitCell.xib */,
 				2845158F20B352F4009F3EE1 /* CloudKitViewControllerHeader.swift */,
@@ -182,6 +185,7 @@
 				2845159C20B5EA1C009F3EE1 /* InMemoryDataSource.swift in Sources */,
 				2845159420B352F4009F3EE1 /* ConsentKitCell.swift in Sources */,
 				2845159620B352F4009F3EE1 /* ConsentKitViewController.swift in Sources */,
+				283DB05E20BC77D200A8BC14 /* ConsentKitCellProtocol.swift in Sources */,
 				2845157D20B3528B009F3EE1 /* AppDelegate.swift in Sources */,
 				2845159320B352F4009F3EE1 /* CloudKitViewControllerHeader.swift in Sources */,
 				2845159820B4BB95009F3EE1 /* SimpleViewController.swift in Sources */,

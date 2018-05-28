@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tYq-AS-pci" customClass="ConsentKitCell" customModule="Gdpr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tYq-AS-pci" id="S6h-hV-QJN">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="131.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxL-hF-Ajw">
+                        <rect key="frame" x="30" y="30" width="243" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="mCd-Al-Lwa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipj-VB-gT8">
+                        <rect key="frame" x="293" y="30" width="51" height="31"/>
+                        <connections>
+                            <action selector="switchChanged:" destination="tYq-AS-pci" eventType="valueChanged" id="B28-by-HrB"/>
+                        </connections>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vU-wc-8bW">
+                        <rect key="frame" x="30" y="70.5" width="243" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="6vU-wc-8bW" secondAttribute="bottom" constant="30" id="3Vr-oc-nL4"/>
+                    <constraint firstItem="cxL-hF-Ajw" firstAttribute="top" secondItem="S6h-hV-QJN" secondAttribute="top" constant="30" id="4Tb-ZF-9DJ"/>
+                    <constraint firstItem="Ipj-VB-gT8" firstAttribute="leading" secondItem="cxL-hF-Ajw" secondAttribute="trailing" constant="20" id="8hV-Hy-gHv"/>
+                    <constraint firstItem="Ipj-VB-gT8" firstAttribute="top" secondItem="S6h-hV-QJN" secondAttribute="top" constant="30" id="9Vi-6d-mDa"/>
+                    <constraint firstAttribute="trailing" secondItem="Ipj-VB-gT8" secondAttribute="trailing" constant="33" id="Prx-29-rl3"/>
+                    <constraint firstItem="6vU-wc-8bW" firstAttribute="top" secondItem="cxL-hF-Ajw" secondAttribute="bottom" constant="20" id="U94-iV-0Kt"/>
+                    <constraint firstItem="6vU-wc-8bW" firstAttribute="trailing" secondItem="cxL-hF-Ajw" secondAttribute="trailing" id="dtP-Xq-YWf"/>
+                    <constraint firstItem="cxL-hF-Ajw" firstAttribute="leading" secondItem="S6h-hV-QJN" secondAttribute="leading" constant="30" id="sjN-2V-Zsd"/>
+                    <constraint firstItem="6vU-wc-8bW" firstAttribute="leading" secondItem="cxL-hF-Ajw" secondAttribute="leading" id="xU8-fk-wP4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="subtitleLabel" destination="6vU-wc-8bW" id="Rdm-Lx-G6h"/>
+                <outlet property="switchButton" destination="Ipj-VB-gT8" id="nHc-3r-shJ"/>
+                <outlet property="titleLabel" destination="cxL-hF-Ajw" id="cNa-IU-8V6"/>
+            </connections>
+            <point key="canvasLocation" x="60.5" y="-547"/>
+        </tableViewCell>
+    </objects>
+</document>

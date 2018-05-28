@@ -1,6 +1,5 @@
 //
 //  CloudKitViewControllerHeader.swift
-//  ConsentIos
 //
 //  Created by Cristian Baluta on 21/05/2018.
 //  Copyright © 2018 Cristian Baluta. All rights reserved.

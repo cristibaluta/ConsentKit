@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283DB05C20BADECD00A8BC14 /* ConsentKitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 283DB05B20BADECD00A8BC14 /* ConsentKitCell.xib */; };
 		2845157D20B3528B009F3EE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845157C20B3528B009F3EE1 /* AppDelegate.swift */; };
 		2845157F20B3528B009F3EE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845157E20B3528B009F3EE1 /* ViewController.swift */; };
 		2845158220B3528B009F3EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2845158020B3528B009F3EE1 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		283DB05B20BADECD00A8BC14 /* ConsentKitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConsentKitCell.xib; sourceTree = "<group>"; };
 		2845157920B3528B009F3EE1 /* Gdpr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gdpr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2845157C20B3528B009F3EE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2845157E20B3528B009F3EE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				2845159D20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift */,
 				2845159220B352F4009F3EE1 /* ConsentKitViewController.swift */,
 				2845159020B352F4009F3EE1 /* ConsentKitCell.swift */,
+				283DB05B20BADECD00A8BC14 /* ConsentKitCell.xib */,
 				2845158F20B352F4009F3EE1 /* CloudKitViewControllerHeader.swift */,
 			);
 			name = src;
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2845158720B3528F009F3EE1 /* LaunchScreen.storyboard in Resources */,
+				283DB05C20BADECD00A8BC14 /* ConsentKitCell.xib in Resources */,
 				2845158420B3528F009F3EE1 /* Assets.xcassets in Resources */,
 				2845158220B3528B009F3EE1 /* Main.storyboard in Resources */,
 			);

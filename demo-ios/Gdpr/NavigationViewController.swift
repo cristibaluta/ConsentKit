@@ -17,7 +17,7 @@ class NavigationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if gdpr.needsReviewing([Services.icloud, Services.analytics]) {
+        if gdpr.needsReviewing([Services.icloud, Services.analytics, ConsentKitServices.location]) {
             label.text = "Gdpr needs reviewing!"
         } else {
             label.text = "All gdpr items already reviewed"
@@ -27,10 +27,7 @@ class NavigationViewController: UIViewController {
     @IBAction func handleGdpr() {
         
         let vc = ConsentKitViewController()
-        vc.items = [
-            (Services.icloud, gdpr.isAccepted(Services.icloud)),
-            (Services.analytics, gdpr.isAccepted(Services.analytics))
-        ]
+        vc.items = [Services.icloud, Services.analytics, ConsentKitServices.location]
         vc.didFinishReview = {
             self.navigationController?.popViewController(animated: true)
         }

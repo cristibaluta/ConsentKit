@@ -28,11 +28,7 @@ class SimpleViewController: UIViewController {
     @IBAction func handleGdpr() {
         
         let vc = ConsentKitViewController()
-        vc.items = [
-            (Services.icloud, gdpr.isAccepted(Services.icloud)),
-            (Services.analytics, gdpr.isAccepted(Services.analytics)),
-            (ConsentKitServices.location, gdpr.isAccepted(ConsentKitServices.location))
-        ]
+        vc.items = [Services.icloud, Services.analytics, ConsentKitServices.location]
         self.present(vc, animated: true)
     }
 }

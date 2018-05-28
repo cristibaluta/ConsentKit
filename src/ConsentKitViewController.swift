@@ -13,7 +13,7 @@ class ConsentKitViewController: UITableViewController {
     var didAccept: ((ConsentKitItem) -> Void)?
     var didReject: ((ConsentKitItem) -> Void)?
     var didFinishReview: (() -> Void)?
-    var items: [(ConsentKitItem, Bool)] = [] {
+    var items: [ConsentKitItem] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -57,13 +57,13 @@ class ConsentKitViewController: UITableViewController {
 
         let item = items[indexPath.row]
         let cell = ConsentKitCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = item.0.title()
-        cell.detailTextLabel?.text = item.0.description()
+        cell.textLabel?.text = item.title()
+        cell.detailTextLabel?.text = item.description()
         cell.detailTextLabel?.numberOfLines = 0
         cell.valueChanged = { switchButton in
-            self.switchChanged(switchButton, with: item.0)
+            self.switchChanged(switchButton, with: item)
         }
-        cell.defaultValue = item.1
+        cell.defaultValue = gdpr.isAccepted(item)
         
         return cell
     }
@@ -93,17 +93,17 @@ class ConsentKitViewController: UITableViewController {
             )
             self.present(alert, animated: true, completion: nil)
         } else {
-            self.didReject?(item)
+            didReject?(item)
         }
     }
     
     @objc func handleDone() {
         // Set to false the untouched switches, to prevent gdpr being called again
-        for item in self.items {
-            if !self.gdpr.isReviewed(item.0) {
-                self.gdpr.setAccepted(false, for: item.0)
+        for item in items {
+            if !gdpr.isReviewed(item) {
+                gdpr.setAccepted(false, for: item)
             }
         }
-        self.didFinishReview?()
+        didFinishReview?()
     }
 }

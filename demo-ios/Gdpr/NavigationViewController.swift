@@ -10,8 +10,6 @@ import UIKit
 
 class NavigationViewController: UIViewController {
     
-    fileprivate let gdpr = ConsentKit()
-    
     @IBOutlet var label: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {

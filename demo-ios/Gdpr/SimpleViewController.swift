@@ -10,9 +10,6 @@ import UIKit
 
 class SimpleViewController: UIViewController {
     
-    fileprivate let gdpr = ConsentKit()
-//    fileprivate let gdpr = ConsentKit(dataSource: InMemoryDataSource())
-    
     @IBOutlet var label: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {

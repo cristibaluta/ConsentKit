@@ -27,13 +27,16 @@ enum Services: String, ConsentKitItem {
         }
     }
 
-    func alertMessage() -> String {
+    func alertMessage() -> String? {
         switch self {
-        case .icloud: return "I accept that this app will store my data in the Apple's iCloud for the purpose of syncing it across multiple devices and backup!"
-        case .analytics: return "I accept that this app will store usage data in Google analytics for the purpose of improving the app!"
+        case .icloud: return nil
+        case .analytics: return nil
         }
     }
 }
+
+let gdpr = ConsentKit()
+//let gdpr = ConsentKit(dataSource: InMemoryDataSource())
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,6 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // For testing purposes we reset all values from previous run
+        gdpr.reset(Services.icloud)
+        gdpr.reset(Services.analytics)
+        gdpr.reset(ConsentKitServices.location)
+
         return true
     }
 }

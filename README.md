@@ -1,5 +1,5 @@
 # ConsentKit
-Note: This library only helps you collect consents for the services in your app that needs it, actually disabling those services is developer's job.
+Note: This library only helps you collect consents for the services in your app, actually disabling those services is developer's job.
 
 ![Screenshot](https://image.ibb.co/iuASQy/Screen_Shot_2018_05_28_at_23_07_10.png)
 
@@ -25,16 +25,16 @@ enum Services: String, ConsentKitItem {
                 case .analytics: return "Google analytics"
             }
         }
-        func alertMessage() -> String {
+        func alertMessage() -> String? {
             switch self {
-                case .icloud: return "I hereby accept this app to store my data in the Apple's iCloud!"
-                case .analytics: return "I hereby accept this app to store analytics in Google analytics!"
+                case .icloud: return nil
+                case .analytics: return "I accept this app to store anonymous analytics in Google Analytics!"
             }
         }
 }
 ```
 
-### In the flow of your app where you need consent, instantiate the lib
+### Instantiate the lib, preferably once in the AppDelegate, but can be anywhere and as many times as you like.
 
 ```swift
 let gdpr = ConsentKit()
@@ -67,5 +67,5 @@ protocol ConsentKitDataSource {
 ```
 
 ## Contribution
-Help me create a generic list of services  that people can use without wasting time thinking and writing them. I started this file, ConsentKitServices, for this purpose, so if you know new services or better texts please go ahead and make pull requests or create issues so we can discuss them.
+Help me create a complete list of services that the developers can use.
 Thanks.

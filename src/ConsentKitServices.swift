@@ -29,7 +29,7 @@ enum ConsentKitServices: String, ConsentKitItem {
         }
     }
     
-    func alertMessage() -> String {
+    func alertMessage() -> String? {
         switch self {
         case .icloud: return "I accept that this app will store my data in the Apple's iCloud for the purpose of syncing it across multiple devices and backup"
         case .analytics: return "I accept that this app will store anonymous usage data in Google analytics for the purpose of improving the app"

@@ -75,7 +75,12 @@ class ConsentKitViewController: UITableViewController {
     func item(_ item: ConsentKitItem, didChangeValue value: Bool, in cell: ConsentKitCellProtocol) {
 
         if value {
-            let alert = UIAlertController(title: item.title(), message: item.alertMessage(), preferredStyle: .alert)
+            guard let message = item.alertMessage() else {
+                self.gdpr.setAccepted(true, for: item)
+                self.didAccept?(item)
+                return
+            }
+            let alert = UIAlertController(title: item.title(), message: message, preferredStyle: .alert)
             alert.addAction(
                 UIAlertAction(title: "Accept", style: .default, handler: { _ in
                     self.gdpr.setAccepted(true, for: item)
@@ -92,6 +97,7 @@ class ConsentKitViewController: UITableViewController {
             )
             self.present(alert, animated: true, completion: nil)
         } else {
+            self.gdpr.setAccepted(false, for: item)
             didReject?(item)
         }
     }

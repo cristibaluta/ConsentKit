@@ -10,12 +10,7 @@ import UIKit
 
 class ViewController: UITabBarController {
 
-    fileprivate let gdpr = ConsentKit()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // For testing purposes we reset all values from previous run
-        gdpr.reset(Services.icloud)
-        gdpr.reset(Services.analytics)
     }
 }

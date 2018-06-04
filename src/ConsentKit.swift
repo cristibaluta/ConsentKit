@@ -13,8 +13,8 @@ protocol ConsentKitItem {
     func title() -> String
     /// Description used in the cell
     func description() -> String
-    /// Message displayed by the alert when the switch is turned on
-    func alertMessage() -> String
+    /// Message displayed in an alert when the switch is turned on.
+    func alertMessage() -> String?
 }
 
 protocol ConsentKitDataSource {

@@ -27,6 +27,35 @@
             </objects>
             <point key="canvasLocation" x="-458" y="257"/>
         </scene>
+        <!--Inline-->
+        <scene sceneID="9tQ-UH-Y3J">
+            <objects>
+                <tableViewController id="JRJ-aa-STA" customClass="TableViewController" customModule="Gdpr" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RvO-n1-z4v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2Oy-CL-TyF">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Oy-CL-TyF" id="WJn-vx-ATr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JRJ-aa-STA" id="NWO-A1-6To"/>
+                            <outlet property="delegate" destination="JRJ-aa-STA" id="dhr-6T-vtr"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Inline" id="mrh-Qw-N7V"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CEM-0b-zLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-458" y="998"/>
+        </scene>
         <!--My App-->
         <scene sceneID="x2z-WN-oMX">
             <objects>
@@ -124,6 +153,7 @@
                     <connections>
                         <segue destination="HQu-Jw-AKg" kind="relationship" relationship="viewControllers" id="nkn-KP-7mk"/>
                         <segue destination="rAn-8a-pj6" kind="relationship" relationship="viewControllers" id="CjP-F1-Rny"/>
+                        <segue destination="JRJ-aa-STA" kind="relationship" relationship="viewControllers" id="5QK-tI-hkk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i27-h4-yUr" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -23,6 +23,7 @@
 		2845159C20B5EA1C009F3EE1 /* InMemoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159B20B5EA1C009F3EE1 /* InMemoryDataSource.swift */; };
 		2845159E20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159D20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift */; };
 		284515A020B5F738009F3EE1 /* ConsentKitServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845159F20B5F738009F3EE1 /* ConsentKitServices.swift */; };
+		5684412C20C5A4DB00D9A471 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5684412B20C5A4DB00D9A471 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		2845159B20B5EA1C009F3EE1 /* InMemoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDataSource.swift; sourceTree = "<group>"; };
 		2845159D20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentKitUserDefaultsDataSource.swift; sourceTree = "<group>"; };
 		2845159F20B5F738009F3EE1 /* ConsentKitServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentKitServices.swift; sourceTree = "<group>"; };
+		5684412B20C5A4DB00D9A471 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				2845157E20B3528B009F3EE1 /* ViewController.swift */,
 				2845159720B4BB95009F3EE1 /* SimpleViewController.swift */,
 				2845159920B4BDBC009F3EE1 /* NavigationViewController.swift */,
+				5684412B20C5A4DB00D9A471 /* TableViewController.swift */,
 				2845159B20B5EA1C009F3EE1 /* InMemoryDataSource.swift */,
 				2845158020B3528B009F3EE1 /* Main.storyboard */,
 				2845158320B3528F009F3EE1 /* Assets.xcassets */,
@@ -180,6 +183,7 @@
 			files = (
 				2845159A20B4BDBC009F3EE1 /* NavigationViewController.swift in Sources */,
 				2845159E20B5EDD6009F3EE1 /* ConsentKitUserDefaultsDataSource.swift in Sources */,
+				5684412C20C5A4DB00D9A471 /* TableViewController.swift in Sources */,
 				284515A020B5F738009F3EE1 /* ConsentKitServices.swift in Sources */,
 				2845157F20B3528B009F3EE1 /* ViewController.swift in Sources */,
 				2845159C20B5EA1C009F3EE1 /* InMemoryDataSource.swift in Sources */,
